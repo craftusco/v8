@@ -7,7 +7,7 @@
 <p>&nbsp;</p>
 
 <h1 align="center">
-  V8 8
+  V8
 </h1>
 
 <h3 align="center">
