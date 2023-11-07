@@ -1,0 +1,626 @@
+[2023-11-07 07:50:39] api[config].ERROR: Directus\Authentication\Exception\InvalidUserCredentialsException: Invalid user credentials in /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php:181
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php(129): Directus\Authentication\Provider->findUserWithCredentials
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Services/AuthService.php(59): Directus\Authentication\Provider->login
+#2 /Applications/MAMP/htdocs/v8/src/endpoints/Auth.php(67): Directus\Services\AuthService->loginWithCredentials
+#3 [internal function]: Directus\Api\Routes\Auth->authenticate
+#4 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#6 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->__invoke
+#7 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#8 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#9 [internal function]: Slim\DeferredCallable->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#11 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#12 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#20 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#25 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#26 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#27 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#28 [internal function]: Slim\DeferredCallable->__invoke
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#30 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#31 [internal function]: RKA\Middleware\IpAddress->__invoke
+#32 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#33 [internal function]: Slim\DeferredCallable->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#35 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#36 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#37 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#41 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#42 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#47 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#48 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#49 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 07:55:33] api[config].ERROR: Directus\Authentication\Exception\InvalidUserCredentialsException: Invalid user credentials in /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php:181
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php(129): Directus\Authentication\Provider->findUserWithCredentials
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Services/AuthService.php(59): Directus\Authentication\Provider->login
+#2 /Applications/MAMP/htdocs/v8/src/endpoints/Auth.php(67): Directus\Services\AuthService->loginWithCredentials
+#3 [internal function]: Directus\Api\Routes\Auth->authenticate
+#4 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#6 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->__invoke
+#7 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#8 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#9 [internal function]: Slim\DeferredCallable->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#11 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#12 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#20 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#25 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#26 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#27 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#28 [internal function]: Slim\DeferredCallable->__invoke
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#30 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#31 [internal function]: RKA\Middleware\IpAddress->__invoke
+#32 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#33 [internal function]: Slim\DeferredCallable->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#35 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#36 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#37 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#41 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#42 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#47 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#48 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#49 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 07:58:03] api[config].ERROR: Directus\Authentication\Exception\InvalidUserCredentialsException: Invalid user credentials in /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php:181
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php(129): Directus\Authentication\Provider->findUserWithCredentials
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Services/AuthService.php(59): Directus\Authentication\Provider->login
+#2 /Applications/MAMP/htdocs/v8/src/endpoints/Auth.php(67): Directus\Services\AuthService->loginWithCredentials
+#3 [internal function]: Directus\Api\Routes\Auth->authenticate
+#4 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#6 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->__invoke
+#7 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#8 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#9 [internal function]: Slim\DeferredCallable->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#11 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#12 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#20 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#25 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#26 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#27 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#28 [internal function]: Slim\DeferredCallable->__invoke
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#30 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#31 [internal function]: RKA\Middleware\IpAddress->__invoke
+#32 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#33 [internal function]: Slim\DeferredCallable->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#35 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#36 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#37 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#41 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#42 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#47 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#48 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#49 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:01:29] api[config].ERROR: Directus\Exception\UnauthorizedException: Unauthorized request in /Applications/MAMP/htdocs/v8/src/helpers/app.php:287
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(518): Directus\{closure}
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->__invoke
+#2 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#3 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#4 [internal function]: Slim\DeferredCallable->__invoke
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#6 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#7 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#8 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#10 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:01:58] api[my-project].ERROR: Directus\Database\Exception\ConnectionFailedException: Failed to connect to the database in /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php:723
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#2 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php(1122): Directus\Container\Container->get
+#3 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#4 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#5 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(20): Directus\Container\Container->get
+#6 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(35): Directus\get_directus_settings
+#7 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(142): Directus\get_directus_setting
+#8 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(16): Directus\get_trusted_proxies
+#9 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#11 [internal function]: Slim\DeferredCallable->__invoke
+#12 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#13 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#14 [internal function]: RKA\Middleware\IpAddress->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#16 [internal function]: Slim\DeferredCallable->__invoke
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#18 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#19 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#20 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#21 [internal function]: Slim\DeferredCallable->__invoke
+#22 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#23 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#24 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#25 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#26 [internal function]: Slim\DeferredCallable->__invoke
+#27 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#31 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#32 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:02:26] api[_].ERROR: Directus\Exception\UnauthorizedException: Unauthorized request in /Applications/MAMP/htdocs/v8/src/helpers/app.php:287
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(518): Directus\{closure}
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->__invoke
+#2 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#3 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#4 [internal function]: Slim\DeferredCallable->__invoke
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#6 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#7 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#8 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#10 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:04:22] api[config].ERROR: Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (42S02 - 1146 - Table 'v8.directus_settings' doesn't exist) in /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute
+#1 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Zend\Db\TableGateway\AbstractTableGateway->executeSelect
+#2 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(196): Zend\Db\TableGateway\AbstractTableGateway->selectWith
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php(1125): Zend\Db\TableGateway\AbstractTableGateway->select
+#4 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#5 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#6 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(20): Directus\Container\Container->get
+#7 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(35): Directus\get_directus_settings
+#8 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(142): Directus\get_directus_setting
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(16): Directus\get_trusted_proxies
+#10 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#11 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#12 [internal function]: Slim\DeferredCallable->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#14 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#15 [internal function]: RKA\Middleware\IpAddress->__invoke
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#17 [internal function]: Slim\DeferredCallable->__invoke
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#20 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#25 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#26 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#27 [internal function]: Slim\DeferredCallable->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#31 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#33 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:04:23] api[config].ERROR: Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (42S02 - 1146 - Table 'v8.directus_settings' doesn't exist) in /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute
+#1 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Zend\Db\TableGateway\AbstractTableGateway->executeSelect
+#2 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(196): Zend\Db\TableGateway\AbstractTableGateway->selectWith
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php(1125): Zend\Db\TableGateway\AbstractTableGateway->select
+#4 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#5 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#6 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(20): Directus\Container\Container->get
+#7 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(35): Directus\get_directus_settings
+#8 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(142): Directus\get_directus_setting
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(16): Directus\get_trusted_proxies
+#10 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#11 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#12 [internal function]: Slim\DeferredCallable->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#14 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#15 [internal function]: RKA\Middleware\IpAddress->__invoke
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#17 [internal function]: Slim\DeferredCallable->__invoke
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#20 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#25 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#26 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#27 [internal function]: Slim\DeferredCallable->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#31 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#33 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:04:24] api[config].ERROR: Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (42S02 - 1146 - Table 'v8.directus_settings' doesn't exist) in /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute
+#1 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Zend\Db\TableGateway\AbstractTableGateway->executeSelect
+#2 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(196): Zend\Db\TableGateway\AbstractTableGateway->selectWith
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php(1125): Zend\Db\TableGateway\AbstractTableGateway->select
+#4 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#5 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#6 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(20): Directus\Container\Container->get
+#7 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(35): Directus\get_directus_settings
+#8 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(142): Directus\get_directus_setting
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(16): Directus\get_trusted_proxies
+#10 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#11 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#12 [internal function]: Slim\DeferredCallable->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#14 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#15 [internal function]: RKA\Middleware\IpAddress->__invoke
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#17 [internal function]: Slim\DeferredCallable->__invoke
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#20 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#25 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#26 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#27 [internal function]: Slim\DeferredCallable->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#31 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#33 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:04:29] api[config].ERROR: Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (42S02 - 1146 - Table 'v8.directus_settings' doesn't exist) in /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute
+#1 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Zend\Db\TableGateway\AbstractTableGateway->executeSelect
+#2 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(196): Zend\Db\TableGateway\AbstractTableGateway->selectWith
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php(1125): Zend\Db\TableGateway\AbstractTableGateway->select
+#4 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#5 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#6 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(20): Directus\Container\Container->get
+#7 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(35): Directus\get_directus_settings
+#8 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(142): Directus\get_directus_setting
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(16): Directus\get_trusted_proxies
+#10 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#11 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#12 [internal function]: Slim\DeferredCallable->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#14 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#15 [internal function]: RKA\Middleware\IpAddress->__invoke
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#17 [internal function]: Slim\DeferredCallable->__invoke
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#20 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#25 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#26 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#27 [internal function]: Slim\DeferredCallable->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#31 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#33 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:04:30] api[config].ERROR: Zend\Db\Adapter\Exception\InvalidQueryException: Statement could not be executed (42S02 - 1146 - Table 'v8.directus_settings' doesn't exist) in /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/Adapter/Driver/Pdo/Statement.php:244
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(239): Zend\Db\Adapter\Driver\Pdo\Statement->execute
+#1 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(209): Zend\Db\TableGateway\AbstractTableGateway->executeSelect
+#2 /Applications/MAMP/htdocs/v8/vendor/zendframework/zend-db/src/TableGateway/AbstractTableGateway.php(196): Zend\Db\TableGateway\AbstractTableGateway->selectWith
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/CoreServicesProvider.php(1125): Zend\Db\TableGateway\AbstractTableGateway->select
+#4 /Applications/MAMP/htdocs/v8/vendor/pimple/pimple/src/Pimple/Container.php(118): Directus\Application\CoreServicesProvider->Directus\Application\{closure}
+#5 /Applications/MAMP/htdocs/v8/src/core/Directus/Container/Container.php(27): Pimple\Container->offsetGet
+#6 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(20): Directus\Container\Container->get
+#7 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(35): Directus\get_directus_settings
+#8 /Applications/MAMP/htdocs/v8/src/helpers/settings.php(142): Directus\get_directus_setting
+#9 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(16): Directus\get_trusted_proxies
+#10 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#11 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#12 [internal function]: Slim\DeferredCallable->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#14 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#15 [internal function]: RKA\Middleware\IpAddress->__invoke
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#17 [internal function]: Slim\DeferredCallable->__invoke
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#20 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#25 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#26 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#27 [internal function]: Slim\DeferredCallable->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#31 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#33 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:07:40] api[config].ERROR: Directus\Authentication\Exception\InvalidUserCredentialsException: Invalid user credentials in /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php:181
+Stack trace:
+#0 /Applications/MAMP/htdocs/v8/src/core/Directus/Authentication/Provider.php(129): Directus\Authentication\Provider->findUserWithCredentials
+#1 /Applications/MAMP/htdocs/v8/src/core/Directus/Services/AuthService.php(59): Directus\Authentication\Provider->login
+#2 /Applications/MAMP/htdocs/v8/src/endpoints/Auth.php(67): Directus\Services\AuthService->loginWithCredentials
+#3 [internal function]: Directus\Api\Routes\Auth->authenticate
+#4 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#6 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->__invoke
+#7 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#8 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#9 [internal function]: Slim\DeferredCallable->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#11 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#12 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#13 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#14 [internal function]: Slim\DeferredCallable->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#16 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#18 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#19 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#20 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#21 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#22 [internal function]: Slim\DeferredCallable->__invoke
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#24 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#25 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#26 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#27 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#28 [internal function]: Slim\DeferredCallable->__invoke
+#29 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#30 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#31 [internal function]: RKA\Middleware\IpAddress->__invoke
+#32 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#33 [internal function]: Slim\DeferredCallable->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#35 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#36 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#37 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#38 [internal function]: Slim\DeferredCallable->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#40 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#41 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#42 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#43 [internal function]: Slim\DeferredCallable->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#45 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#47 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#48 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#49 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:23:28] api[config].ERROR: Directus\Exception\SQLException: SQLSTATE[42000]: Syntax error or access violation: 1068 Multiple primary key defined in /Applications/MAMP/htdocs/v8/src/endpoints/Fields.php:59
+Stack trace:
+#0 [internal function]: Directus\Api\Routes\Fields->create
+#1 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#2 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#4 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#6 [internal function]: Slim\DeferredCallable->__invoke
+#7 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#8 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(124): Slim\Route->Slim\{closure}
+#9 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#11 [internal function]: Slim\DeferredCallable->__invoke
+#12 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#13 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#14 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#16 [internal function]: Slim\DeferredCallable->__invoke
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#18 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#19 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#20 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#21 [internal function]: Slim\DeferredCallable->__invoke
+#22 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#24 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#25 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#26 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#27 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#29 [internal function]: Slim\DeferredCallable->__invoke
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#31 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#33 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#35 [internal function]: Slim\DeferredCallable->__invoke
+#36 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#37 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#38 [internal function]: RKA\Middleware\IpAddress->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#40 [internal function]: Slim\DeferredCallable->__invoke
+#41 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#42 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#43 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#45 [internal function]: Slim\DeferredCallable->__invoke
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#47 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#48 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#49 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#50 [internal function]: Slim\DeferredCallable->__invoke
+#51 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#52 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#53 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#54 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#55 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#56 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:23:30] api[config].ERROR: Directus\Exception\SQLException: SQLSTATE[42000]: Syntax error or access violation: 1068 Multiple primary key defined in /Applications/MAMP/htdocs/v8/src/endpoints/Fields.php:59
+Stack trace:
+#0 [internal function]: Directus\Api\Routes\Fields->create
+#1 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#2 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#4 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#6 [internal function]: Slim\DeferredCallable->__invoke
+#7 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#8 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(124): Slim\Route->Slim\{closure}
+#9 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#11 [internal function]: Slim\DeferredCallable->__invoke
+#12 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#13 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#14 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#16 [internal function]: Slim\DeferredCallable->__invoke
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#18 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#19 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#20 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#21 [internal function]: Slim\DeferredCallable->__invoke
+#22 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#24 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#25 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#26 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#27 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#29 [internal function]: Slim\DeferredCallable->__invoke
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#31 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#33 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#35 [internal function]: Slim\DeferredCallable->__invoke
+#36 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#37 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#38 [internal function]: RKA\Middleware\IpAddress->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#40 [internal function]: Slim\DeferredCallable->__invoke
+#41 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#42 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#43 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#45 [internal function]: Slim\DeferredCallable->__invoke
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#47 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#48 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#49 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#50 [internal function]: Slim\DeferredCallable->__invoke
+#51 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#52 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#53 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#54 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#55 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#56 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
+[2023-11-07 08:23:41] api[config].ERROR: Directus\Exception\SQLException: SQLSTATE[42000]: Syntax error or access violation: 1068 Multiple primary key defined in /Applications/MAMP/htdocs/v8/src/endpoints/Fields.php:59
+Stack trace:
+#0 [internal function]: Directus\Api\Routes\Fields->create
+#1 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(40): call_user_func
+#2 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(281): Slim\Handlers\Strategies\RequestResponse->__invoke
+#3 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\Route->__invoke
+#4 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#5 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#6 [internal function]: Slim\DeferredCallable->__invoke
+#7 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#8 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AuthenticationMiddleware.php(124): Slim\Route->Slim\{closure}
+#9 [internal function]: Directus\Application\Http\Middleware\AuthenticationMiddleware->__invoke
+#10 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#11 [internal function]: Slim\DeferredCallable->__invoke
+#12 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#13 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/TableGatewayMiddleware.php(25): Slim\Route->Slim\{closure}
+#14 [internal function]: Directus\Application\Http\Middleware\TableGatewayMiddleware->__invoke
+#15 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#16 [internal function]: Slim\DeferredCallable->__invoke
+#17 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#18 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/DatabaseMigrationMiddleware.php(15): Slim\Route->Slim\{closure}
+#19 [internal function]: Directus\Application\Http\Middleware\DatabaseMigrationMiddleware->__invoke
+#20 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#21 [internal function]: Slim\DeferredCallable->__invoke
+#22 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#23 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\Route->Slim\{closure}
+#24 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/Route.php(268): Slim\Route->callMiddlewareStack
+#25 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(503): Slim\Route->run
+#26 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/AbstractRateLimitMiddleware.php(34): Slim\App->__invoke
+#27 [internal function]: Directus\Application\Http\Middleware\AbstractRateLimitMiddleware->__invoke
+#28 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#29 [internal function]: Slim\DeferredCallable->__invoke
+#30 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#31 /Applications/MAMP/htdocs/v8/vendor/directus/proxy-detection/src/ProxyDetectionMiddleware.php(30): Slim\App->Slim\{closure}
+#32 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ProxyMiddleware.php(18): RKA\Middleware\ProxyDetectionMiddleware->__invoke
+#33 [internal function]: Directus\Application\Http\Middleware\ProxyMiddleware->__invoke
+#34 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#35 [internal function]: Slim\DeferredCallable->__invoke
+#36 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#37 /Applications/MAMP/htdocs/v8/vendor/akrabat/ip-address-middleware/src/IpAddress.php(113): Slim\App->Slim\{closure}
+#38 [internal function]: RKA\Middleware\IpAddress->__invoke
+#39 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#40 [internal function]: Slim\DeferredCallable->__invoke
+#41 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#42 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/CorsMiddleware.php(71): Slim\App->Slim\{closure}
+#43 [internal function]: Directus\Application\Http\Middleware\CorsMiddleware->__invoke
+#44 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#45 [internal function]: Slim\DeferredCallable->__invoke
+#46 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#47 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Http/Middleware/ResponseCacheMiddleware.php(63): Slim\App->Slim\{closure}
+#48 [internal function]: Directus\Application\Http\Middleware\ResponseCacheMiddleware->__invoke
+#49 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/DeferredCallable.php(57): call_user_func_array
+#50 [internal function]: Slim\DeferredCallable->__invoke
+#51 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(70): call_user_func
+#52 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(117): Slim\App->Slim\{closure}
+#53 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(392): Slim\App->callMiddlewareStack
+#54 /Applications/MAMP/htdocs/v8/vendor/slim/slim/Slim/App.php(297): Slim\App->process
+#55 /Applications/MAMP/htdocs/v8/src/core/Directus/Application/Application.php(161): Slim\App->run
+#56 /Applications/MAMP/htdocs/v8/public/index.php(5): Directus\Application\Application->run [] []
